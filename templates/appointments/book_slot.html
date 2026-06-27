@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Book Slot</title></head>
+<body>
+    <h2>Confirm Booking</h2>
+    <p>Doctor: Dr. {{ slot.doctor.username }}</p>
+    <p>Date: {{ slot.date }}</p>
+    <p>Time: {{ slot.start_time }} - {{ slot.end_time }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirm Booking</button>
+    </form>
+    <br>
+    <a href="/appointments/patient/slots/{{ slot.doctor.id }}/">Back</a>
+</body>
+</html>
