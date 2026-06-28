@@ -5,8 +5,9 @@ from email.mime.multipart import MIMEMultipart
 
 app = Flask(__name__)
 
-GMAIL_USER = 'realalgovibes@gmail.com'
-GMAIL_PASSWORD = 'xbswhwueudpicick'
+import os
+GMAIL_USER = os.environ.get('GMAIL_USER', '')
+GMAIL_PASSWORD = os.environ.get('GMAIL_PASSWORD', '')
 
 @app.route('/send-email', methods=['POST'])
 def send_email():
